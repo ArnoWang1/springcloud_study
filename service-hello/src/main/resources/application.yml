@@ -1,0 +1,23 @@
+spring:
+  profiles:
+    active: hello01
+  application:
+    name: HelloService
+---
+spring:
+  profiles: hello01
+server:
+  port: 9091
+eureka:
+  client:
+    service-url:
+      defaultZone: http://node01:8081/eureka/,http://node02:8082/eureka/
+---
+spring:
+  profiles: hello02
+server:
+  port: 9092
+eureka:
+  client:
+    service-url:
+      defaultZone: http://node01:8081/eureka/,http://node02:8082/eureka/

@@ -1,0 +1,12 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: FeignDemo
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://node01:8081/eureka/,http://node02:8082/eureka/
+feign:
+  hystrix:
+    enabled: true

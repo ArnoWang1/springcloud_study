@@ -1,0 +1,25 @@
+spring:
+  profiles:
+    active: node02
+---
+spring:
+  profiles: node01
+server:
+  port: 8081
+eureka:
+  instance:
+    hostname: node01
+  client:
+    service-url:
+      defaultZone: http://node02:8082/eureka/
+---
+spring:
+  profiles: node02
+server:
+  port: 8082
+eureka:
+  instance:
+    hostname: node02
+  client:
+    service-url:
+      defaultZone: http://node01:8081/eureka/

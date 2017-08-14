@@ -1,0 +1,14 @@
+spring:
+  profiles:
+    active: user01
+  application:
+    name: UserService
+---
+spring:
+  profiles: user01
+server:
+  port: 9100
+eureka:
+  client:
+    service-url:
+      defaultZone: http://node01:8081/eureka/,http://node02:8082/eureka/
