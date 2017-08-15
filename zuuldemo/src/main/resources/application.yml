@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: ZuulDemo
+server:
+  port: 9200
+eureka:
+  client:
+    service-url:
+      defaultZone: http://node01:8081/eureka/,http://node02:8082/eureka/
+zuul:
+  routes:
+    api-hello:
+      path: /api-hello/**
+      serviceId: HelloService
+    api-user:
+      path: /api-user/**
+      serviceId: UserService

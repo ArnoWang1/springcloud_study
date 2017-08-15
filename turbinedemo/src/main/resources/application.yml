@@ -4,11 +4,10 @@ spring:
 server:
   port: 7070
 turbine:
-  app-config: FeignDemo,HelloService
+  app-config: FeignDemo
   clusterNameExpression: new String("default")
   aggregator:
     clusterConfig: default
-
 eureka:
   client:
     service-url:
