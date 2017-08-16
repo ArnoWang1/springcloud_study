@@ -3,6 +3,13 @@ server:
 spring:
   application:
     name: FeignDemo
+  cloud:
+    config:
+      label: master
+      profile: customer
+      discovery:
+        enabled: true
+        service-id: ConfigServer
 eureka:
   client:
     serviceUrl:

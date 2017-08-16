@@ -1,0 +1,27 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://node01:8081/eureka/,http://node02:8082/eureka/
+spring:
+  profiles:
+    active: node01
+  application:
+    name: ConfigServer
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/ArnoWang1/springcloud_study
+          search-paths: cloudconfig
+          username: wangjinnan16@163.com
+          password: Github8232
+---
+server:
+  port: 9300
+spring:
+  profiles: node01
+---
+server:
+  port: 9301
+spring:
+  profiles: node02
